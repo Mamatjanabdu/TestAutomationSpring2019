@@ -15,16 +15,19 @@ public class EbayTest {
 
         static WebDriver driver = BrowserFactory.getDriver("chrome");
 
-        public static void main(String[] args) throws Exception {
+        public static void main(String[] args)  {
 
                 WebDriver driver=BrowserFactory.getDriver("chrome");
                 driver.get("http://practice.cybertekschool.com/");
                 driver.manage().window().maximize();
 
+            driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
                 List<WebElement> list=driver.findElements(By.id("login"));
                 driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
                 System.out.println(list.size());
-                for (WebElement ele:list) {
+            driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+
+            for (WebElement ele:list) {
                     System.out.println(ele.getText());
                 }
                 driver.close();

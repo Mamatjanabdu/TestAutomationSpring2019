@@ -1,5 +1,6 @@
 package com.cybertek.ThursdayHomeWork;
 
+import com.cybertek.Utilities.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -26,22 +27,16 @@ public class cyberTekPractice {
       //login.click();
       //  WebElement login = driver.findElement(By.xpath("//*[@id=\"wooden_spoon\"]"))
 
-        WebElement confirmationMessage = driver.findElement(By.xpath("//*[@id=\"flash\"]"));
+        WebElement confirmationMessage = driver.findElement(By.id("flash")) ;
+       // SeleniumUtils.verifyIsDisplayed(confirmationMessage);
+
         String expectedMessage="Your username is invalid!\n" +
                 "×";
         String  actualMessage= confirmationMessage.getText();
 
         System.out.println("Actual message: "+actualMessage);
-
-        if(actualMessage.equals(expectedMessage)){
-            System.out.println("test passed");
-        }else{
-            System.out.println("Test failed");
-      System.out.println("Expcted message: "+expectedMessage);
-           System.out.println("Actual message: "+actualMessage);
-        }
-
-       // driver.close();
+        SeleniumUtils.verifyEquals(expectedMessage,actualMessage);
+       driver.close();
 
     }
 }

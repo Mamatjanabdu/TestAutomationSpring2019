@@ -1,5 +1,6 @@
 package com.cybertek.ThursdayHomeWork;
 
+import com.cybertek.Utilities.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,11 +14,13 @@ public class VytrackProject {
         WebDriverManager.chromedriver().setup();
         WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
+
         driver.get("http://qa2.vytrack.com/user/login");
         Thread.sleep(3000);
 
         WebElement name = driver.findElement(By.name("_username"));
         name.sendKeys("User188"+Keys.ENTER);
+
         WebElement passWord = driver.findElement(By.name("_password"));
         passWord.sendKeys("UserUser123"+Keys.ENTER);
         Thread.sleep(2000);
@@ -31,17 +34,23 @@ public class VytrackProject {
         Thread.sleep(3000);
         
 
-        driver.findElement(By.xpath("//*[@id=\"user-menu\"]/a")).click();
-        driver.findElement(By.xpath("//*[@id=\"user-menu\"]/ul/li[4]/a")).click();
-        Thread.sleep(3000);
-        if (  (driver.getCurrentUrl().equals("http://qa2.vytrack.com/user/login")))
-        {
-            System.out.println("PASS");
-        }else {
-            System.out.println("FAIL");
+        driver.findElement(By.xpath("//a[@class='dropdown-toggle']")).click();
+       SeleniumUtils.waitPlease(2);
+        driver.findElement(By.xpath("//a[@class='no-hash']")).click();
+        Thread.sleep(2000);
 
-        }
-        Thread.sleep(3000);
+        WebElement loginBot=driver.findElement(By.xpath("//h2[@class='title']"));
+        SeleniumUtils.verifyIsDisplayed(loginBot);
+
+
+//        if (  (driver.getCurrentUrl().equals("http://qa2.vytrack.com/user/login")))
+//        {
+//            System.out.println("PASS");
+//        }else {
+//            System.out.println("FAIL");
+//
+//        }
+        Thread.sleep(2000);
 
 
         driver.close();

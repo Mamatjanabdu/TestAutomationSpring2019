@@ -1,32 +1,36 @@
 package com.cybertek.ThursdayHomeWork;
 
+import com.cybertek.Utilities.BrowserFactory;
+import com.cybertek.Utilities.SeleniumUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.concurrent.TimeUnit;
+
 class EncapsulationDemo{
-    private int ssn;
-    private String empName;
-    private int empAge;
-
-    //Getter and Setter methods
-    public int getEmpSSN(){
-        return ssn;
+    static WebDriver driver = BrowserFactory.getDriver("chrome");
+    public static void main(String[] args) {
+        opPage();
     }
 
-    public String getEmpName(){
-        return empName;
-    }
 
-    public int getEmpAge(){
-        return empAge;
-    }
 
-    public void setEmpAge(int newValue){
-        empAge = newValue;
-    }
+    public static void opPage() {
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.get("http://practice.cybertekschool.com");
+        WebElement element = driver.findElement(By.xpath("//h3[text()='Dropdown List']"));
+        SeleniumUtils.waitPlease(2);
 
-    public void setEmpName(String newValue){
-        empName = newValue;
-    }
-
-    public void setEmpSSN(int newValue){
-        ssn = newValue;
+        if(element.isDisplayed() ){
+            System.out.println("PASSED");
+            System.out.println(element.getText()+": is visible");
+            SeleniumUtils.waitPlease(2);
+        }else{
+            System.out.println("FAILED");
+            System.out.println(element.getText()+": is not visible!");
+             SeleniumUtils.waitPlease(2);
+        }
     }
 }

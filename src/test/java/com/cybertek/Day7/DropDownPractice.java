@@ -18,7 +18,7 @@ public class DropDownPractice {
     public static void main(String[] args) {
         openDropDownPage();
         SeleniumUtils.waitPlease(2);
-        test2();
+        test6();
         SeleniumUtils.waitPlease(2);
         driver.close();
     }
@@ -45,7 +45,7 @@ public class DropDownPractice {
         //dropdown. Value or other attributes of drop down, not visible.
         String actual = dropdownSelect.getFirstSelectedOption().getText();
         String expected = "Please select an option";
-        SeleniumUtils.verifyEquals(expected, actual);
+        SeleniumUtils.verifyEquals(expected,   actual);
         //we can get list of options that are present in the dropdown
         List<WebElement> options = dropdownSelect.getOptions();
         for (WebElement option : options) {
