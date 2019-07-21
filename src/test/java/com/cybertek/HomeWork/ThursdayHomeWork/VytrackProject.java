@@ -1,4 +1,4 @@
-package com.cybertek.ThursdayHomeWork;
+package com.cybertek.HomeWork.ThursdayHomeWork;
 
 import com.cybertek.Utilities.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;

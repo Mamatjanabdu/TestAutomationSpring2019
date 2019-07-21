@@ -1,4 +1,4 @@
-package com.cybertek.Tests.Day4;
+package com.cybertek.Day4;
 
 import com.github.javafaker.Faker;
 

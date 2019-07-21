@@ -1,6 +1,5 @@
-package com.cybertek.ThursdayHomeWork;
+package com.cybertek.HomeWork.ThursdayHomeWork;
 
-import com.cybertek.Utilities.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
-import java.util.WeakHashMap;
 
 public class FBtest {
     public static void main(String[] args) {

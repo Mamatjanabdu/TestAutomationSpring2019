@@ -1,17 +1,15 @@
-package com.cybertek.July2Practice;
+package com.cybertek.day3;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-public class exc1 {
-
+public class FirstAutomationScript {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver= new ChromeDriver();
-        driver.get("http://www.google.com");
-    }
-}
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://practice.cybertekschool.com");
+
+    }}

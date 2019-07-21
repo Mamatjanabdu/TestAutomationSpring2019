@@ -1,4 +1,4 @@
-package com.cybertek.July2Practice;
+package com.cybertek.day6;
 
 import com.cybertek.Utilities.BrowserFactory;
 import com.cybertek.Utilities.SeleniumUtils;
